@@ -68,16 +68,16 @@
         },
         {
             "name": "budgetcontrol/library",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BudgetControl/Library.git",
-                "reference": "7aecea0e741f85190d74943b48293dad1c0bb769"
+                "reference": "e9b23d24efa260d85c20bcf591abecc32628954d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/7aecea0e741f85190d74943b48293dad1c0bb769",
-                "reference": "7aecea0e741f85190d74943b48293dad1c0bb769",
+                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/e9b23d24efa260d85c20bcf591abecc32628954d",
+                "reference": "e9b23d24efa260d85c20bcf591abecc32628954d",
                 "shasum": ""
             },
             "require": {
@@ -98,10 +98,10 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/BudgetControl/Library/tree/v1.0.1",
+                "source": "https://github.com/BudgetControl/Library/tree/v1.0.2",
                 "issues": "https://github.com/BudgetControl/Library/issues"
             },
-            "time": "2024-08-13T08:52:40+00:00"
+            "time": "2024-08-30T15:49:45+00:00"
         },
         {
             "name": "budgetcontrol/schema-registry-service",

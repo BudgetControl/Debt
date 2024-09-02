@@ -11,7 +11,7 @@ class Controller {
     {
         return response([
             'success' => true,
-            'message' => 'Entries service is up and running'
+            'message' => env('APP_NAME','Debit').' service is up and running'
         ]);
     }
 
