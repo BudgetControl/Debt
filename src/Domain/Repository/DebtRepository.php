@@ -82,7 +82,7 @@ class DebtRepository extends Repository {
             $debts = $this->retriveEntries($wallet->id);
 
             if(!$debts->isEmpty()) {
-                $balance = $wallet->balance;
+                $balance = (float) $wallet->balance;
                 $debit = new Debits($balance, $debts->toArray());
                 $walletDebit->addDebt($debit);
             }
