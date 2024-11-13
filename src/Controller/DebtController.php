@@ -10,6 +10,20 @@ use Budgetcontrol\Library\Model\Payee;
 
 class DebtController extends Controller {
 
+    public function getPayees(Request $request, Response $response, array $args): Response {
+
+        $wsid = (int) $args['wsid'];
+        $repository = new DebtRepository($wsid);
+        $payeesList = $repository->getPayees();
+
+        if(empty($payeesList)) {
+            return response(['message' => 'No payees found'], 404);
+        }
+
+        return response($payeesList->toArray());
+
+    }
+
     /**
      * Retrieves the payees.
      *
@@ -18,7 +32,7 @@ class DebtController extends Controller {
      * @param array $args The route parameters.
      * @return Response The HTTP response.
      */
-    public function getPayees(Request $request, Response $response, array $args): Response {
+    public function getDebits(Request $request, Response $response, array $args): Response {
 
         $wsid = (int) $args['wsid'];
         $repository = new DebtRepository($wsid);
