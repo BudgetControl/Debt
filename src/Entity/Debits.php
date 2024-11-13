@@ -10,11 +10,11 @@ class Debits extends Entity {
     public readonly float $balance;
 
     /** @var array<int,Entry> $debts */
-    private array $debts = [];
+    private array $entries = [];
 
-    public function __construct(float $balance, array $debts) {
+    public function __construct(float $balance, array $entries) {
         $this->balance = $balance;
-        $this->debts = $debts;
+        $this->entries = $entries;
     }
 
     public function getBalance(): float {
@@ -22,13 +22,13 @@ class Debits extends Entity {
     }
 
     public function getDebts(): array {
-        return $this->debts;
+        return $this->entries;
     }
 
     public function toArray(): array {
         return [
             'balance' => $this->balance,
-            'debts' => $this->debts,
+            'entries' => $this->entries,
         ];
     }
 
