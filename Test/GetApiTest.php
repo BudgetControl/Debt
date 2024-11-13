@@ -27,6 +27,23 @@ class GetApiTest extends \PHPUnit\Framework\TestCase
         $assertionContent->assertJsonStructure((array) $assertions);
     }
 
+    public function test_get_debits_list()
+    {
+        $request = $this->createMock(ServerRequestInterface::class);
+        $response = $this->createMock(ResponseInterface::class);
+
+        $controller = new DebtController();
+        $result = $controller->getDebits($request, $response, ['wsid' => 1]);
+        $contentArray = json_decode((string) $result->getBody());
+
+        $this->assertEquals(200, $result->getStatusCode());
+
+        $assertionContent = new JsonAssert(new Json($contentArray));
+        $assertions = json_decode(file_get_contents(__DIR__ . '/assertions/debit-list.json'));
+
+        $assertionContent->assertJsonStructure((array) $assertions);
+    }
+
     public function test_delete_debt()
     {
         $request = $this->createMock(ServerRequestInterface::class);
