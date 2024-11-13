@@ -75,7 +75,7 @@ class DebtRepository extends Repository {
     public function getCreditCardsDebts(): ?Collection {
         
         $collection = new Collection();
-        $wallets = Wallet::where('type', WalletType::creditCardRevolving->value)->get();
+        $wallets = Wallet::where('type', WalletType::creditCardRevolving->value)->where('workspace_id', $this->workspaceId)->get();
 
         foreach($wallets as $wallet) {
             $walletDebit = new WalletDebts($wallet->uuid, $wallet->name, $wallet->created_at, WalletType::creditCardRevolving->value);
