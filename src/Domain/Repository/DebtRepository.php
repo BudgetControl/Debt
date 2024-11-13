@@ -104,7 +104,6 @@ class DebtRepository extends Repository {
     {
         $entries = Entry::where('workspace_id', $this->workspaceId)
         ->where('account_id', $walletId)
-        ->where('type', EntityEntry::debit->value)
         ->get();
 
         return $entries;
