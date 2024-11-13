@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"GetApiTest::test_get_payees_list":0.162,"GetApiTest::test_delete_debt":0.019}}
+{"version":1,"defects":{"GetApiTest::test_get_payees_list":7,"GetApiTest::test_delete_debt":8},"times":{"GetApiTest::test_get_payees_list":0.094,"GetApiTest::test_delete_debt":0.011,"GetApiTest::test_get_debits_list":0.145}}
