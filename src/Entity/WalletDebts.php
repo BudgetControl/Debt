@@ -16,10 +16,11 @@ class WalletDebts extends Entity {
 
     private Debits $debts;
 
-    public function __construct(string $uuid, string $name, string $createdAt, string $type = 'debit') {
+    public function __construct(string $uuid, string $name, Carbon $createdAt, string $type = 'debit') {
         $this->type = $type;
         $this->uuid = $uuid;
         $this->name = $name;
+        $this->createdAt = $createdAt->toDateTimeString();
         $this->debts = new Debits(0, []);
     }
 
