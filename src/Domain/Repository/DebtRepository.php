@@ -84,9 +84,9 @@ class DebtRepository extends Repository {
             if(!$debts->isEmpty()) {
                 $balance = $wallet->balance;
                 $debit = new Debits($balance, $debts->toArray());
+                $walletDebit->addDebt($debit);
             }
 
-            $walletDebit->addDebt($debit);
             $collection->add($walletDebit->toArray()); //FIXME: toArray() is not better use here
         }
 
