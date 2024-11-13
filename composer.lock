@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba708766b141cf82421e87a2f924e1cb",
+    "content-hash": "01945bf649dd280c4cb60265920d0e32",
     "packages": [
         {
             "name": "brick/math",
@@ -67,20 +67,66 @@
             "time": "2023-11-29T23:19:16+00:00"
         },
         {
-            "name": "budgetcontrol/library",
-            "version": "v1.0.6",
+            "name": "budgetcontrol/cryptable",
+            "version": "v0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BudgetControl/Library.git",
-                "reference": "9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb"
+                "url": "https://github.com/BudgetControl/LibsCryptable.git",
+                "reference": "12d139566fd5af05c961c99b307dbb490b97e071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb",
-                "reference": "9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb",
+                "url": "https://api.github.com/repos/BudgetControl/LibsCryptable/zipball/12d139566fd5af05c961c99b307dbb490b97e071",
+                "reference": "12d139566fd5af05c961c99b307dbb490b97e071",
                 "shasum": ""
             },
             "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.23",
+                "mlabfactory/phpunit-self-api-integration": "^v1.1-beta",
+                "nikic/php-parser": "^5.0",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "BudgetcontrolLibs\\Crypt\\": "libs/"
+                }
+            },
+            "license": [
+                "AGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Marco De Felice",
+                    "email": "marco.defelice@mlabfactory.it"
+                }
+            ],
+            "description": "The cryptable package",
+            "support": {
+                "source": "https://github.com/BudgetControl/LibsCryptable/tree/v0.1",
+                "issues": "https://github.com/BudgetControl/LibsCryptable/issues"
+            },
+            "time": "2024-09-13T12:32:30+00:00"
+        },
+        {
+            "name": "budgetcontrol/library",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BudgetControl/Library.git",
+                "reference": "591c808cbd2a6b2e852879fcf60aca279dda1a51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/591c808cbd2a6b2e852879fcf60aca279dda1a51",
+                "reference": "591c808cbd2a6b2e852879fcf60aca279dda1a51",
+                "shasum": ""
+            },
+            "require": {
+                "budgetcontrol/cryptable": "^v0.1",
                 "illuminate/database": "11.19",
                 "ramsey/uuid": "^4.7",
                 "webit/bcmath": "^2.0"
@@ -98,9 +144,9 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/BudgetControl/Library/tree/v1.0.6"
+                "source": "https://github.com/BudgetControl/Library/tree/v1.3"
             },
-            "time": "2024-09-10T15:34:30+00:00"
+            "time": "2024-10-18T13:20:42+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -7121,6 +7167,6 @@
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
