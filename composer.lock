@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e69f6f7735bc7d9706e329f4711eee8c",
+    "content-hash": "ba708766b141cf82421e87a2f924e1cb",
     "packages": [
         {
             "name": "brick/math",
@@ -68,16 +68,16 @@
         },
         {
             "name": "budgetcontrol/library",
-            "version": "v1.0.2",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BudgetControl/Library.git",
-                "reference": "e9b23d24efa260d85c20bcf591abecc32628954d"
+                "reference": "9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/e9b23d24efa260d85c20bcf591abecc32628954d",
-                "reference": "e9b23d24efa260d85c20bcf591abecc32628954d",
+                "url": "https://api.github.com/repos/BudgetControl/Library/zipball/9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb",
+                "reference": "9b8a36fb62eff9472f6580ee06eb30ad44ce2bcb",
                 "shasum": ""
             },
             "require": {
@@ -98,43 +98,9 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/BudgetControl/Library/tree/v1.0.2",
-                "issues": "https://github.com/BudgetControl/Library/issues"
+                "source": "https://github.com/BudgetControl/Library/tree/v1.0.6"
             },
-            "time": "2024-08-30T15:49:45+00:00"
-        },
-        {
-            "name": "budgetcontrol/schema-registry-service",
-            "version": "v1.0-beta",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/BudgetControl/Schema-Registry-Service.git",
-                "reference": "01466280c3f20acec2167bee44562285e8e93751"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BudgetControl/Schema-Registry-Service/zipball/01466280c3f20acec2167bee44562285e8e93751",
-                "reference": "01466280c3f20acec2167bee44562285e8e93751",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Budgetcontrol\\Registry\\": "libs/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Marco De Felice",
-                    "email": "marco.defelice@mlabfactory.it"
-                }
-            ],
-            "description": "An API Schema Registry is a centralized service that manages and distributes database schema definitions",
-            "support": {
-                "source": "https://github.com/BudgetControl/Schema-Registry-Service/tree/v1.0-beta",
-                "issues": "https://github.com/BudgetControl/Schema-Registry-Service/issues"
-            },
-            "time": "2024-08-06T13:26:32+00:00"
+            "time": "2024-09-10T15:34:30+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -4961,6 +4927,39 @@
     ],
     "packages-dev": [
         {
+            "name": "budgetcontrol/schema-registry-service",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BudgetControl/Schema-Registry-Service.git",
+                "reference": "50625a1e72ff21d7f9baf643d374158cdf65bbab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BudgetControl/Schema-Registry-Service/zipball/50625a1e72ff21d7f9baf643d374158cdf65bbab",
+                "reference": "50625a1e72ff21d7f9baf643d374158cdf65bbab",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Budgetcontrol\\Registry\\": "libs/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Marco De Felice",
+                    "email": "marco.defelice@mlabfactory.it"
+                }
+            ],
+            "description": "An API Schema Registry is a centralized service that manages and distributes database schema definitions",
+            "support": {
+                "source": "https://github.com/BudgetControl/Schema-Registry-Service/tree/v1.1.2",
+                "issues": "https://github.com/BudgetControl/Schema-Registry-Service/issues"
+            },
+            "time": "2024-10-18T12:55:08+00:00"
+        },
+        {
             "name": "budgetcontrol/seeds",
             "version": "v0.1-beta",
             "source": {
@@ -7114,9 +7113,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "budgetcontrol/schema-registry-service": 10,
-        "mlabfactory/phpunit-self-api-integration": 10,
-        "budgetcontrol/seeds": 10
+        "budgetcontrol/seeds": 10,
+        "mlabfactory/phpunit-self-api-integration": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -7124,5 +7122,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

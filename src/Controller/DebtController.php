@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Budgetcontrol\Debt\Controller;
 
+use Budgetcontrol\Debt\Domain\Repository\DebtRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Budgetcontrol\Library\Model\Payee;
@@ -19,10 +20,21 @@ class DebtController extends Controller {
      */
     public function getPayees(Request $request, Response $response, array $args): Response {
 
-        $wsid = $args['wsid'];
-        $payeesList = Payee::with('entry')->where('workspace_id', $wsid)->get();
+        $wsid = (int) $args['wsid'];
+        $repository = new DebtRepository($wsid);
+        $payeesList = $repository->getPayeesWithEntry();
+        $creditCardsDebts = $repository->getCreditCardsDebts();
 
-        return response($payeesList->toArray());
+        if(empty($payeesList) && empty($creditCardsDebts)) {
+            return response(['message' => 'No payees found'], 404);
+        }
+
+        $payees = $payeesList->toArray();
+        $creditCards = $creditCardsDebts->toArray();
+
+        $results = array_merge($payees, $creditCards);
+
+        return response($results);
     }
 
     /**
@@ -35,10 +47,11 @@ class DebtController extends Controller {
      */
     public function delete(Request $request, Response $response, array $args): Response {
 
-        $wsid = $args['wsid'];
+        $wsid = (int) $args['wsid'];
         $debtId = $args['debt_id'];
 
-        $payee = Payee::where('workspace_id', $wsid)->where('uuid', $debtId)->first();
+        $repository = new DebtRepository($wsid);
+        $payee = $repository->getPayeeByUuid($debtId);
 
         if ($payee) {
             $payee->delete();
@@ -46,5 +59,26 @@ class DebtController extends Controller {
         }
 
         return response(['message' => 'Payee not found'], 404);
+    }
+
+    /**
+     * Retrieves the total debt for all credit cards.
+     *
+     * @param Request $request The HTTP request object.
+     * @param Response $response The HTTP response object.
+     * @param array $args The route arguments.
+     * @return Response The HTTP response with the total credit card debt.
+     */
+    public function getCreditCardsDebts(Request $request, Response $response, array $args): Response 
+    {
+        $wsid = (int) $args['wsid'];
+        $repository = new DebtRepository($wsid);
+        $payeesList = $repository->getCreditCardsDebts();
+
+        if(empty($payeesList)) {
+            return response(['message' => 'No credit card debts found'], 404);
+        }
+
+        return response($payeesList->toArray());
     }
 }
