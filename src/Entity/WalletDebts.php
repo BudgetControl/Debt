@@ -5,16 +5,18 @@ namespace Budgetcontrol\Debt\Entity;
 
 use Budgetcontrol\Library\Entity\Wallet;
 use Budgetcontrol\Library\Model\Entry;
+use Carbon\Carbon;
 
 class WalletDebts extends Entity {
 
     private readonly string $type;
     private readonly string $uuid;
     private readonly string $name;
+    private readonly string $createdAt;
 
     private Debits $debts;
 
-    public function __construct(string $uuid, string $name, string $type = 'debit') {
+    public function __construct(string $uuid, string $name, string $createdAt, string $type = 'debit') {
         $this->type = $type;
         $this->uuid = $uuid;
         $this->name = $name;
@@ -49,6 +51,15 @@ class WalletDebts extends Entity {
     }
 
     /**
+     * Retrieves the wallet creation date.
+     *
+     * @return string The wallet creation date.
+     */
+    public function getCreatedAt(): string {
+        return $this->createdAt;
+    }
+
+    /**
      * Retrieves the debts.
      *
      * @return Debits The debts.
@@ -77,6 +88,7 @@ class WalletDebts extends Entity {
             'type' => $this->type,
             'uuid' => $this->uuid,
             'name' => $this->name,
+            'createdAt' => $this->createdAt,
             'debts' => $this->debts->toArray(),
         ];
     }

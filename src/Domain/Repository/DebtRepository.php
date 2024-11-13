@@ -38,7 +38,7 @@ class DebtRepository extends Repository {
         $results = new Collection();
 
         foreach($debitsList as $payee) {
-            $walletDebit = new WalletDebts($payee->uuid, $payee->name);
+            $walletDebit = new WalletDebts($payee->uuid, $payee->name, $payee->created_at);
             $entries = $payee->entry->toArray();
             $balance = $this->sumEntries($payee->entry, 0);
             $debits = new Debits($balance, $entries);
@@ -78,7 +78,7 @@ class DebtRepository extends Repository {
         $wallets = Wallet::where('type', WalletType::creditCardRevolving->value)->get();
 
         foreach($wallets as $wallet) {
-            $walletDebit = new WalletDebts($wallet->uuid, $wallet->name, WalletType::creditCardRevolving->value);
+            $walletDebit = new WalletDebts($wallet->uuid, $wallet->name, $wallet->created_at, WalletType::creditCardRevolving->value);
             $debts = $this->retriveEntries($wallet->id);
 
             if(!$debts->isEmpty()) {
