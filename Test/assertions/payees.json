@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "workspace_id": 1,
+        "created_at": "2024-11-13T17:08:52.000000Z",
+        "updated_at": "2024-11-13T17:08:52.000000Z",
+        "date_time": null,
+        "deleted_at": null,
+        "uuid": "23b373ad-d18f-4f4a-8ff1-7e2df13bce8c",
+        "name": "Payee 1"
+    },
+    {
+        "id": 2,
+        "workspace_id": 1,
+        "created_at": "2024-11-13T17:09:15.000000Z",
+        "updated_at": "2024-11-13T17:09:15.000000Z",
+        "date_time": null,
+        "deleted_at": null,
+        "uuid": "0a06e21c-895b-4be0-9585-4fb0780d9358",
+        "name": "John Doe"
+    },
+    {
+        "id": 3,
+        "workspace_id": 1,
+        "created_at": "2024-11-13T17:09:15.000000Z",
+        "updated_at": "2024-11-13T17:09:15.000000Z",
+        "date_time": null,
+        "deleted_at": null,
+        "uuid": "5f0eed9c-138b-4925-916a-bc9558d154e7",
+        "name": "Jane Doe"
+    },
+    {
+        "id": 4,
+        "workspace_id": 1,
+        "created_at": "2024-11-13T17:09:15.000000Z",
+        "updated_at": "2024-11-13T17:09:15.000000Z",
+        "date_time": null,
+        "deleted_at": null,
+        "uuid": "61f88864-ff6b-45d6-addc-308e36ee3b54",
+        "name": "John Smith"
+    },
+    {
+        "id": 5,
+        "workspace_id": 1,
+        "created_at": "2024-11-13T17:09:15.000000Z",
+        "updated_at": "2024-11-13T17:09:15.000000Z",
+        "date_time": null,
+        "deleted_at": null,
+        "uuid": "8fd80af1-96b3-4416-aa7b-cd9642b419d3",
+        "name": "Jane Smith"
+    }
+]

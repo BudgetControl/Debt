@@ -22,7 +22,7 @@ class GetApiTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(200, $result->getStatusCode());
 
         $assertionContent = new JsonAssert(new Json($contentArray));
-        $assertions = json_decode(file_get_contents(__DIR__ . '/assertions/debit-list.json'));
+        $assertions = json_decode(file_get_contents(__DIR__ . '/assertions/payees.json'));
 
         $assertionContent->assertJsonStructure((array) $assertions);
     }

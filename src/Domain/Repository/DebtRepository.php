@@ -54,9 +54,9 @@ class DebtRepository extends Repository {
      * Retrieve the payee information by UUID.
      *
      * @param string $uuid The UUID of the payee.
-     * @return ?Collection The collection of payee information or null if not found.
+     * @return ?\Budgetcontrol\Library\Model\Payee The collection of payee information or null if not found.
      */
-    public function getPayeeByUuid(string $uuid): ?Collection
+    public function getPayeeByUuid(string $uuid): ?\Budgetcontrol\Library\Model\Payee
     {
         $payee = Payee::where('workspace_id', $this->workspaceId)->where('uuid', $uuid)->first();
 
