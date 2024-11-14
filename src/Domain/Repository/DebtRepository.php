@@ -79,7 +79,7 @@ class DebtRepository extends Repository {
 
         foreach($wallets as $wallet) {
             $walletDebit = new WalletDebts($wallet->uuid, $wallet->name, $wallet->created_at, WalletType::creditCardRevolving->value);
-            $debts = $this->retriveEntries($wallet->id);
+            $debts = $this->retriveEntries($wallet->id, true);
 
             if(!$debts->isEmpty()) {
                 $balance = (float) $wallet->balance;
@@ -98,15 +98,22 @@ class DebtRepository extends Repository {
      * Retrieve entries for a given wallet ID.
      *
      * @param int $walletId The ID of the wallet to retrieve entries for.
+     * @param bool $currentMonth retrive the entries of current month
      * @return Collection The collection of entries associated with the specified wallet ID.
      */
-    private function retriveEntries(int $walletId): Collection
+    private function retriveEntries(int $walletId, bool $currentMonth = false): Collection
     {
         $entries = Entry::where('workspace_id', $this->workspaceId)
-        ->where('account_id', $walletId)
-        ->get();
+        ->where('account_id', $walletId);
+    
+        // if current month is true, retrive the entries of current month
+        // for a credt card or wallet account better use the current month
+        if($currentMonth) {
+            $entries->where('date_time', '>=', Carbon::now()->firstOfMonth()->toDateString());
+            $entries->where('date_time', '<=', Carbon::now()->lastOfMonth()->toDateString());
+        }
 
-        return $entries;
+        return $entries->get();
     }
 
     /**
