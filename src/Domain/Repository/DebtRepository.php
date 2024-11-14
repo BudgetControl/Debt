@@ -12,6 +12,7 @@ use Budgetcontrol\Library\Model\Wallet;
 use Illuminate\Database\Eloquent\Collection;
 use Budgetcontrol\Library\Model\Entry;
 use Webit\Wrapper\BcMath\BcMathNumber;
+use Illuminate\Support\Carbon;
 
 class DebtRepository extends Repository {
 
