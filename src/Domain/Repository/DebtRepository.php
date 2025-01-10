@@ -41,7 +41,7 @@ class DebtRepository extends Repository {
         foreach($debitsList as $payee) {
             $walletDebit = new WalletDebts($payee->uuid, $payee->name, $payee->created_at);
             $entries = $payee->entry->toArray();
-            $balance = $payee->balance;
+            $balance = (float) $payee->balance;
             $debits = new Debits($balance, $entries);
             $walletDebit->addDebt($debits);
 
